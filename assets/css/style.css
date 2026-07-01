@@ -555,7 +555,6 @@ section {
 }
 
 .service-card-icon-badge {
-  display: none;
   position: absolute;
   bottom: -20px;
   right: 20px;
@@ -598,6 +597,23 @@ section {
   line-height: 1.6;
   margin: 0 0 12px 0;
   flex: 1;
+}
+
+.service-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.service-card-price {
+  font-size: 12px;
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--accent-red-hover);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  display: inline-block;
 }
 
 .service-footer {
