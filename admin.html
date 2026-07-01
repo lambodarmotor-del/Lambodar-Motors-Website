@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lambodar Motors — Admin Reviews Portal</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="index.html">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Styling -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <style>
+    body {
+      background: radial-gradient(circle at top right, rgba(185, 28, 28, 0.08), transparent 50%), radial-gradient(circle at bottom left, rgba(22, 22, 26, 0.9), var(--bg-dark));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .admin-container {
+      max-width: 700px;
+      width: 100%;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    .admin-card {
+      background: rgba(22, 22, 26, 0.45);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      color: #fff;
+    }
+    .login-container {
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .input-field {
+      width: 100%;
+      padding: 12px 16px;
+      background: #0b0b0d;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 20px;
+      outline: none;
+      transition: border-color 0.2s;
+      text-align: center;
+    }
+    .input-field:focus {
+      border-color: var(--accent-red-hover);
+    }
+    .dashboard-panel {
+      display: none; /* Shown after login */
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: #a0aec0;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .form-input {
+      width: 100%;
+      padding: 10px 14px;
+      background: #0b0b0d;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--accent-red-hover);
+    }
+    .review-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background: rgba(255,255,255,0.01);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 13.5px;
+    }
+    .review-list-item:last-child {
+      border-bottom: none;
+    }
+    .btn-delete {
+      background: rgba(229, 62, 62, 0.1);
+      border: 1px solid rgba(229,62,62,0.3);
+      color: #fc8181;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+    .btn-delete:hover {
+      background: #e53e3e;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Branding -->
+  <header class="main-header" style="position: static; padding: 20px 0; background: transparent; border-bottom: 1px solid rgba(255,255,255,0.03);">
+    <div class="header-container" style="justify-content: center;">
+      <div class="logo">
+        <a href="index.html" class="logo-img-link">
+          <img src="assets/images/logo/logo.jpg" alt="Lambodar Motors Logo" class="logo-img" />
+        </a>
+        <a href="index.html" class="logo-text-link">
+          <span><span class="logo-red">Lambodar</span> Motors</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Card -->
+  <div class="admin-container">
+    <div class="admin-card">
+      
+      <!-- 1. LOGIN SCREEN -->
+      <div id="login-panel" class="login-container">
+        <div style="background: rgba(185, 28, 28, 0.1); border: 1px solid rgba(185, 28, 28, 0.2); border-radius: 50%; width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--accent-red-hover);">
+          <i data-lucide="lock" style="width: 24px; height: 24px;"></i>
+        </div>
+        <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 10px;">Owner Portal</h2>
+        <p style="color: #a0aec0; font-size: 14px; margin-bottom: 30px; line-height: 1.4;">Enter your security passcode to access reviews management.</p>
+        
+        <form id="login-form" onsubmit="event.preventDefault(); handleLogin();">
+          <input type="password" id="passcode-input" class="input-field" placeholder="Enter Passcode" autofocus>
+          <button type="submit" class="btn btn-call" style="width: 100%; justify-content: center; font-weight: 700;">Unlock Dashboard</button>
+        </form>
+      </div>
+
+      <!-- 2. DASHBOARD PANEL -->
+      <div id="dashboard-panel" class="dashboard-panel">
+        <h3 style="font-size: 22px; font-weight: 800; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; margin-bottom: 24px; text-transform: uppercase; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="shield-check" style="color: #2ecc71;"></i>
+          Reviews Administration
+        </h3>
+        
+        <!-- Add Review Form -->
+        <div style="margin-bottom: 32px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; padding: 24px;">
+          <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--accent-red-hover); text-transform: uppercase; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+            <i data-lucide="plus-circle" style="width: 16px; height: 16px;"></i>
+            Add Custom Customer Review
+          </h4>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div class="form-group">
+              <label>Customer Name</label>
+              <input type="text" id="new-name" class="form-input" placeholder="e.g. Mukesh Patel">
+            </div>
+            <div class="form-group">
+              <label>Customer Subtitle / Badge</label>
+              <input type="text" id="new-badge" class="form-input" placeholder="e.g. Verified Client">
+            </div>
+          </div>
+          
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label>Star Rating</label>
+            <select id="new-stars" class="form-input" style="background: #0b0b0d;">
+              <option value="5">5 Stars (★★★★★)</option>
+              <option value="4">4 Stars (★★★★☆)</option>
+              <option value="3">3 Stars (★★★☆☆)</option>
+            </select>
+          </div>
+          
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label>Review Text Content</label>
+            <textarea id="new-text" class="form-input" rows="4" placeholder="Type the customer review here..."></textarea>
+          </div>
+          
+          <button id="add-btn" class="btn btn-whatsapp" style="width: 100%; justify-content: center; font-weight: 700;">Add to Testimonials</button>
+        </div>
+        
+        <!-- List Panel -->
+        <div style="margin-bottom: 32px;">
+          <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+            <i data-lucide="list" style="width: 16px; height: 16px;"></i>
+            Manage Reviews (Top 9 show on website)
+          </h4>
+          <div id="reviews-list-container" style="border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; background: #0b0b0d; max-height: 250px; overflow-y: auto;">
+            <!-- Items injected via JS -->
+          </div>
+        </div>
+        
+        <!-- Export / Deploy instructions -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px;">
+          <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+            <i data-lucide="cloud-upload" style="width: 16px; height: 16px; color: var(--accent-red-hover);"></i>
+            Deploy to Live Website
+          </h4>
+          <p style="font-size: 13px; color: #a0aec0; margin-bottom: 16px; line-height: 1.4;">
+            To permanently save your changes for all public visitors, copy the generated code block below and replace the top array in <strong>assets/js/reviews.js</strong>.
+          </p>
+          <button id="copy-btn" class="btn btn-outline" style="width: 100%; justify-content: center; margin-bottom: 12px; font-weight: 600;">Copy Deploy Code</button>
+          <textarea id="export-box" readonly rows="5" style="width: 100%; padding: 12px; background: #0b0b0d; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #32ff7e; font-family: monospace; font-size: 11px; resize: none;"></textarea>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="padding: 24px 0; text-align: center; font-size: 12px; color: #a0aec0; border-top: 1px solid rgba(255,255,255,0.03);">
+    <p>&copy; 2026 Lambodar Motors. All Rights Reserved. | Secured Owner Portal</p>
+  </footer>
+
+  <!-- Icons Loader -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Reviews Script Data -->
+  <script src="assets/js/reviews.js"></script>
+  <!-- Admin Controller -->
+  <script src="assets/js/admin.js"></script>
+
+</body>
+</html>
+

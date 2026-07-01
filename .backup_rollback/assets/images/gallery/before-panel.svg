@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="100%" height="100%" fill="#1a1a24"/>
+  <!-- Dented/Scratched Car Drawing -->
+  <g stroke="#ffffff" stroke-opacity="0.1" stroke-width="2">
+    <path d="M100 280c50-10 150-10 200 10l50 30h300l50-30c50-20 150-20 200-10" fill="none"/>
+    <circle cx="220" cy="310" r="60" fill="none"/>
+    <circle cx="580" cy="310" r="60" fill="none"/>
+  </g>
+  <!-- Scratches & Dents visual overlay -->
+  <g stroke="#718096" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.6">
+    <!-- Scratches -->
+    <path d="M320 200l40-20m-20 40l30-15m-50 40l45-15" />
+    <path d="M420 230l30-10m-10 30l40-10" />
+    <!-- Dent shape contour -->
+    <path d="M330 180c10 20 5 40-10 50m25-60c10 25 5 50-15 65" stroke="#e53e3e" stroke-width="3" stroke-dasharray="5,5"/>
+  </g>
+  <!-- Text overlays -->
+  <rect x="40" y="40" width="120" height="36" rx="6" fill="#e53e3e" fill-opacity="0.2" stroke="#e53e3e" stroke-width="1" />
+  <text x="100" y="62" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#ff4d4d" text-anchor="middle">BEFORE: DENTED</text>
+  
+  <text x="400" y="380" font-family="'Outfit', sans-serif" font-size="16" font-weight="600" fill="#a0aec0" text-anchor="middle">Drag slider to see restorative finish</text>
+</svg>

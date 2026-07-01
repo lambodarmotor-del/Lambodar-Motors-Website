@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Lambodar Motors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      background-color: #0f0f12;
+      color: #f7fafc;
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 24px;
+    }
+    .error-container {
+      max-width: 600px;
+      padding: 48px;
+      background: #16161a;
+      border: 1px solid rgba(185, 28, 28, 0.25);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #b91c1c, #d32f2f);
+    }
+    .error-icon {
+      font-size: 80px;
+      margin-bottom: 24px;
+      display: inline-block;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    h1 {
+      font-size: 72px;
+      font-weight: 800;
+      margin: 0 0 12px 0;
+      color: #b91c1c;
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      color: #ffffff;
+    }
+    p {
+      color: #a0aec0;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 32px 0;
+    }
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #b91c1c;
+      color: #ffffff;
+      padding: 14px 32px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(185, 28, 28, 0.4);
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    .btn-home:hover {
+      background: #d32f2f;
+      box-shadow: 0 6px 20px rgba(185, 28, 28, 0.6);
+      transform: translateY(-2px);
+    }
+    .btn-home:focus {
+      outline: 3px solid #d32f2f;
+      outline-offset: 2px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <div class="error-icon">🚗⚠️</div>
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>Page not found — but your car is in good hands. Go back home.</p>
+    <a href="index.html" class="btn-home">Go Back Home →</a>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

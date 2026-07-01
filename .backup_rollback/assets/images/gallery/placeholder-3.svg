@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="100%" height="100%" fill="#16161a"/>
+  <!-- Decorative Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.02" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+    <line x1="500" y1="0" x2="500" y2="400" />
+    <line x1="0" y1="100" x2="600" y2="100" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="300" x2="600" y2="300" />
+  </g>
+  <!-- Icon Representation: Car and bubbles -->
+  <circle cx="300" cy="180" r="60" fill="#e53e3e" fill-opacity="0.1" />
+  <path d="M260 190h80v-20h-15l-10-15h-30l-10 15h-15z" fill="#f7fafc" opacity="0.8"/>
+  <circle cx="275" cy="200" r="8" fill="#e53e3e"/>
+  <circle cx="325" cy="200" r="8" fill="#e53e3e"/>
+  <!-- Bubbles -->
+  <circle cx="340" cy="140" r="6" fill="#ffffff" opacity="0.6"/>
+  <circle cx="360" cy="155" r="4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="250" cy="150" r="8" fill="#ffffff" opacity="0.5"/>
+  <!-- Typography -->
+  <text x="300" y="290" font-family="'Outfit', sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Car Spa &amp; Interior Detailing</text>
+  <text x="300" y="320" font-family="'Outfit', sans-serif" font-size="14" fill="#a0aec0" text-anchor="middle">Real Photo Placeholder [Slot 3]</text>
+  <!-- Red accent bottom line -->
+  <rect x="0" y="392" width="600" height="8" fill="#e53e3e" />
+</svg>

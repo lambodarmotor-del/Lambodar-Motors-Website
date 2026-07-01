@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="100%" height="100%" fill="#1a1a24"/>
+  <!-- Polished Car Drawing -->
+  <g stroke="#ffffff" stroke-opacity="0.15" stroke-width="2">
+    <path d="M100 280c50-10 150-10 200 10l50 30h300l50-30c50-20 150-20 200-10" fill="none"/>
+    <circle cx="220" cy="310" r="60" fill="none"/>
+    <circle cx="580" cy="310" r="60" fill="none"/>
+  </g>
+  <!-- Shining highlights representing new paint -->
+  <g fill="#ffffff">
+    <!-- Star sparkles -->
+    <path d="M330 180l5 5-5 5-5-5zM360 210l8 8-8 8-8-8zM420 170l6 6-6 6-6-6zM450 220l4 4-4 4-4-4z" />
+  </g>
+  <g stroke="#e53e3e" stroke-width="2" fill="none" opacity="0.3">
+    <!-- Smooth body curves reflecting light -->
+    <path d="M280 220c50-10 100-10 150 0m-180 30c60-10 120-10 180 0" stroke-linecap="round"/>
+  </g>
+  <!-- Text overlays -->
+  <rect x="40" y="40" width="120" height="36" rx="6" fill="#25D366" fill-opacity="0.2" stroke="#25D366" stroke-width="1" />
+  <text x="100" y="62" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" fill="#20ba59" text-anchor="middle">AFTER: RESTORED</text>
+  
+  <text x="400" y="380" font-family="'Outfit', sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Perfect color matching &amp; gloss finish</text>
+</svg>
