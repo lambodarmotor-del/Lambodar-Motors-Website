@@ -40,7 +40,7 @@ function trapFocus(modal) {
 document.addEventListener('DOMContentLoaded', () => {
   // Dynamically load Lucide icons
   const lucideScript = document.createElement('script');
-  lucideScript.src = 'https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js';
+  lucideScript.src = '/assets/js/lucide.min.js';
   lucideScript.onload = () => {
     if (window.lucide) {
       window.lucide.createIcons();
@@ -466,28 +466,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewEl = document.getElementById('live-review-count');
     if (!reviewEl) return;
     
-    try {
-      const placeId = 'ChIJc5Cv4o-DXjkRpJpGY9eUkuA';
-      const proxyUrl = 'https://api.allorigins.win/get?url=';
-      const targetUrl = encodeURIComponent(`https://www.google.com/search?q=Lambodar+Motors+Gota+Ahmedabad`);
-      
-      const response = await fetch(`${proxyUrl}${targetUrl}`);
-      if (response.ok) {
-        const data = await response.json();
-        const html = data.contents;
-        
-        const match = html.match(/(\d+)\s+Google\s+reviews/i) || html.match(/(\d+)\s+reviews/i);
-        if (match && match[1]) {
-          const count = parseInt(match[1], 10);
-          if (count > 29) {
-            reviewEl.textContent = count;
-            return;
-          }
-        }
-      }
-    } catch (e) {
-      console.warn('Live review count fetch failed, using fallback:', e);
-    }
+    // Replace with direct API when available
+    reviewEl.textContent = 29;
   }
   
   // Active nav link detection
@@ -518,6 +498,96 @@ document.addEventListener('DOMContentLoaded', () => {
         behavior: 'smooth'
       });
     });
+  }
+
+  // Scroll reveal animation logic
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealElements.forEach(el => {
+      el.classList.add('visible');
+    });
+  }
+
+  // Animated stat counter for Trust Stats bar
+  const statsBar = document.querySelector('.trust-stats-bar');
+  const statNumbers = document.querySelectorAll('.trust-stat-number');
+  
+  if (statsBar && statNumbers.length >= 4 && 'IntersectionObserver' in window) {
+    const easeOutQuad = (t) => t * (2 - t);
+    
+    const animateCounter = () => {
+      const duration = 1500; // 1.5 seconds
+      const startTime = performance.now();
+      
+      const statsData = [
+        { target: 25, suffix: '+', isComma: false, element: statNumbers[0] },
+        { target: 10000, suffix: '+', isComma: true, element: statNumbers[1] },
+        { target: 29, suffix: '+', isComma: false, element: statNumbers[2] },
+        { target: 100, suffix: '%', isComma: false, element: statNumbers[3] }
+      ];
+      
+      const updateCounters = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const easeProgress = easeOutQuad(progress);
+        
+        statsData.forEach(stat => {
+          const currentVal = Math.round(easeProgress * stat.target);
+          let displayVal = stat.isComma ? currentVal.toLocaleString() : currentVal.toString();
+          
+          const spanEl = stat.element.querySelector('#live-review-count');
+          if (spanEl) {
+            spanEl.textContent = currentVal;
+          } else {
+            stat.element.textContent = displayVal + stat.suffix;
+          }
+        });
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateCounters);
+        } else {
+          statsData.forEach(stat => {
+            let displayVal = stat.isComma ? stat.target.toLocaleString() : stat.target.toString();
+            const spanEl = stat.element.querySelector('#live-review-count');
+            if (spanEl) {
+              spanEl.textContent = stat.target;
+            } else {
+              stat.element.textContent = displayVal + stat.suffix;
+            }
+          });
+        }
+      };
+      
+      requestAnimationFrame(updateCounters);
+    };
+    
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+    
+    statsObserver.observe(statsBar);
   }
 
   updateLiveReviewCount();

@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link rel="alternate" hreflang="en-IN" href="https://lambodar-motors.vercel.app/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Lambodar Motors — Trusted car denting,
     painting & multi-brand repair workshop in Gota, Ahmedabad. 25+ years experience.
@@ -23,7 +25,7 @@
     href="assets/images/logo/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="assets/images/hero_bg.png" as="image" />
+  <link rel="preload" href="assets/images/hero_bg.webp" as="image" />
   <title>Lambodar Motors | Car Workshop in Gota, Ahmedabad</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -343,14 +345,14 @@
   <section id="home" class="hero-section">
     <div class="section-container">
       <div class="hero-content">
-        <div class="hero-location">
+        <div class="hero-location hero-animate">
           📍 Gota, Ahmedabad
         </div>
-        <h1><span class="logo-red">Lambodar</span> Motors <span class="hero-h1-subtitle">Car Workshop in Gota, Ahmedabad</span></h1>
-        <p class="hero-description">
+        <h1 class="hero-animate hero-animate-delay-1"><span class="logo-red">Lambodar</span> Motors <span class="hero-h1-subtitle">Car Workshop in Gota, Ahmedabad</span></h1>
+        <p class="hero-description hero-animate hero-animate-delay-2">
           Fast, transparent, and expert car care near SG Highway. Skip the aggregator markups and get exact estimates before any work begins.
         </p>
-        <div class="hero-ctas">
+        <div class="hero-ctas hero-animate hero-animate-delay-3">
           <a href="tel:+918141282494" class="btn btn-outline">
             <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             Call Now
@@ -401,7 +403,7 @@
 
             <div class="services-grid-container">
         <!-- Service Card 1 -->
-        <a href="denting-painting.html" class="service-card">
+        <a href="denting-painting.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
             <img src="assets/images/denting_painting_bg.jpg" alt="Denting & Painting services at Lambodar Motors Gota Ahmedabad" loading="lazy" />
           </div>
@@ -415,7 +417,7 @@
         </a>
 
         <!-- Service Card 2 -->
-        <a href="ac-service.html" class="service-card">
+        <a href="ac-service.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
             <img src="assets/images/ac_service_bg.jpg" alt="Car AC repair and gas refill Gota Ahmedabad" loading="lazy" />
           </div>
@@ -429,7 +431,7 @@
         </a>
 
         <!-- Service Card 3 -->
-        <a href="battery-brakes-oil.html" class="service-card">
+        <a href="battery-brakes-oil.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
             <img src="assets/images/battery_brakes_oil_bg.jpg" alt="General car servicing and brake repair Gota Ahmedabad" loading="lazy" />
           </div>
@@ -443,7 +445,7 @@
         </a>
 
         <!-- Service Card 4 -->
-        <a href="car-detailing.html" class="service-card">
+        <a href="car-detailing.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
             <img src="assets/images/car_detailing_bg.jpg" alt="Car wash spa and ceramic coating detailing Gota Ahmedabad" loading="lazy" />
           </div>
@@ -457,9 +459,9 @@
         </a>
 
         <!-- Service Card 5 -->
-        <a href="engine-service.html" class="service-card">
+        <a href="engine-service.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
-            <img src="assets/images/engine_service_bg.png" alt="OBD scanner engine diagnostics Lambodar Motors" loading="lazy" />
+            <img src="assets/images/engine_service_bg.webp" alt="OBD scanner engine diagnostics Lambodar Motors" loading="lazy" />
           </div>
           <div class="service-card-content">
             <h3>Engine Diagnostics</h3>
@@ -471,9 +473,9 @@
         </a>
 
         <!-- Service Card 6 -->
-        <a href="insurance-claim.html" class="service-card">
+        <a href="insurance-claim.html" class="service-card reveal">
           <div class="service-card-image-wrapper">
-            <img src="assets/images/insurance_claim_bg.png" alt="Cashless insurance claim processing support Gota Ahmedabad" loading="lazy" />
+            <img src="assets/images/insurance_claim_bg.webp" alt="Cashless insurance claim processing support Gota Ahmedabad" loading="lazy" />
           </div>
           <div class="service-card-content">
             <h3>Insurance Claim Support</h3>
@@ -488,7 +490,7 @@
   </section>
 
   <!-- NO HIDDEN COSTS PLEDGE BANNER -->
-  <section class="pledge-banner">
+  <section class="pledge-banner reveal">
     <div class="pledge-banner-container">
       <h2>No Hidden Charges. Ever.</h2>
       <p class="pledge-subline">Price confirmed before work starts. What we quote is what you pay. No surprises.</p>
@@ -558,7 +560,7 @@
 
       <div class="gallery-grid">
         <!-- Gallery Item 1 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Car Denting &amp; Panel Repair"
              data-gallery-images="assets/images/gallery/cover-denting.webp,assets/images/gallery/denting-2.webp,assets/images/gallery/denting-3.webp"
              data-gallery-captions="Side-Panel Dent Pulling Process,Panel Beating &amp; Shaping,Primed Fender Ready for Paint Spray">
@@ -569,7 +571,7 @@
         </div>
 
         <!-- Gallery Item 2 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Color Matching &amp; Paint Booth"
              data-gallery-images="assets/images/gallery/cover-painting.webp,assets/images/gallery/painting-2.webp,assets/images/denting_painting_bg.jpg"
              data-gallery-captions="Premium Paint Spraying Booth,Detailed Window &amp; Trim Masking,Factory Gloss clear coat Application">
@@ -580,9 +582,9 @@
         </div>
 
         <!-- Gallery Item 3 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Deep Car Interior Spa"
-             data-gallery-images="assets/images/gallery/cover-spa.webp,assets/images/car_detailing_bg.jpg,assets/images/hero_bg.png"
+             data-gallery-images="assets/images/gallery/cover-spa.webp,assets/images/car_detailing_bg.jpg,assets/images/hero_bg.webp"
              data-gallery-captions="Leather Dashboard &amp; Console Brushing,Exterior Active Foam Wash,Ultra-Gloss Showroom Polish Finish">
           <img src="assets/images/gallery/cover-spa.webp" alt="Car wash and dashboard vacuuming at Lambodar Motors Gota Ahmedabad" loading="lazy" width="600" height="400" />
           <div class="gallery-overlay">
@@ -591,9 +593,9 @@
         </div>
 
         <!-- Gallery Item 4 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Engine Fault Diagnostics"
-             data-gallery-images="assets/images/gallery/cover-engine.webp,assets/images/engine_service_bg.png,assets/images/battery_brakes_oil_bg.jpg"
+             data-gallery-images="assets/images/gallery/cover-engine.webp,assets/images/engine_service_bg.webp,assets/images/battery_brakes_oil_bg.jpg"
              data-gallery-captions="OBD2 Fault Diagnostics System,Under-Hood Mechanical Inspection,Engine Battery &amp; Fluids Service">
           <img src="assets/images/gallery/cover-engine.webp" alt="OBD scanner check engine diagnostic at Lambodar Motors Gota Ahmedabad" loading="lazy" width="600" height="400" />
           <div class="gallery-overlay">
@@ -602,7 +604,7 @@
         </div>
 
         <!-- Gallery Item 5 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Tyre Alignment Calibration"
              data-gallery-images="assets/images/gallery/cover-alignment.webp,assets/images/battery_brakes_oil_bg.jpg,assets/images/gallery/cover-alignment.webp"
              data-gallery-captions="3D Laser Targets Calibration,Brake Caliper Servicing,Camber &amp; Toe Angle Alignment Check">
@@ -613,7 +615,7 @@
         </div>
 
         <!-- Gallery Item 6 -->
-        <div class="gallery-item" tabindex="0" role="button"
+        <div class="gallery-item reveal" tabindex="0" role="button"
              data-gallery-title="Premium Ceramic Polish Coating"
              data-gallery-images="assets/images/gallery/cover-ceramic.webp,assets/images/car_detailing_bg.jpg,assets/images/gallery/after-panel.webp"
              data-gallery-captions="Applying Liquid Ceramic Shield Coating,Dual-Action Buffer Wax Polish,Mirror-Like Deep Gloss Paint Finish">
@@ -658,7 +660,7 @@
         <p>What our clients say about the quality and honesty of our repairs.</p>
       </div>
 
-      <div class="reviews-grid" id="reviews-container">
+      <div class="reviews-grid reveal" id="reviews-container">
         <!-- Dynamically loaded from reviews.js -->
       </div>
 
@@ -737,27 +739,27 @@
       <div class="faq-container faq-container-custom">
         <h3 class="faq-heading-custom">Frequently Asked Questions</h3>
         
-        <div class="faq-static-item">
+        <div class="faq-static-item reveal">
           <h4><span>Q:</span> How much does car denting and painting cost in Ahmedabad?</h4>
           <p>At Lambodar Motors, Gota, minor dent repair starts from ₹500 per panel. Full panel repainting starts from ₹1,500 depending on car model, paint grade, and damage size. Multi-panel jobs are priced after a free physical inspection. No advance payment required before estimate.</p>
         </div>
 
-        <div class="faq-static-item">
+        <div class="faq-static-item reveal">
           <h4><span>Q:</span> Do you give free estimates before starting work?</h4>
           <p>Yes. Lambodar Motors provides free inspection and cost estimates for all jobs. No charges apply for diagnosis or assessment. Bring your vehicle to Shop No. 12, Shree Swam Complex, Gota or WhatsApp a photo of the damage for a preliminary quote.</p>
         </div>
 
-        <div class="faq-static-item">
+        <div class="faq-static-item reveal">
           <h4><span>Q:</span> How long does car repair take at Lambodar Motors?</h4>
           <p>Repair time depends on the job. AC gas refill and minor electrical fixes are completed same day. Denting and single panel painting takes 1–2 days. Full car repainting takes 3–5 days. Engine repair timelines are confirmed after diagnosis. All estimated timelines are communicated before work begins.</p>
         </div>
 
-        <div class="faq-static-item">
+        <div class="faq-static-item reveal">
           <h4><span>Q:</span> Which car brands do you service?</h4>
           <p>Lambodar Motors services all major car brands including Maruti Suzuki, Hyundai, Honda, Tata, Mahindra, Toyota, Kia, Renault, Volkswagen, Skoda, and MG. Both petrol and diesel variants are accepted. No brand restriction applies.</p>
         </div>
 
-        <div class="faq-static-item">
+        <div class="faq-static-item reveal">
           <h4><span>Q:</span> Where exactly is Lambodar Motors located in Gota, Ahmedabad?</h4>
           <p>Lambodar Motors is located at Shop No. 12, Shree Swam Complex, near Gokul Hotel, beside Gota Cross Road, Vasant Nagar, Gota, Ahmedabad, Gujarat 382481. The easiest landmark is Gokul Hotel — the workshop is directly beside it.</p>
         </div>

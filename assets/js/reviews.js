@@ -121,6 +121,26 @@ function renderReviewsGrid() {
 
 // 4. DOM READY INITIALIZATION
 document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("reviews-container");
+  if (container) {
+    container.innerHTML = `
+      <div class="review-skeleton">
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line short"></div>
+      </div>
+      <div class="review-skeleton">
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line short"></div>
+      </div>
+      <div class="review-skeleton">
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line"></div>
+        <div class="review-skeleton-line short"></div>
+      </div>
+    `;
+  }
   loadReviews();
-  renderReviewsGrid();
+  setTimeout(renderReviewsGrid, 800);
 });
