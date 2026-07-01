@@ -1780,7 +1780,7 @@ section {
 .mobile-nav-links .mobile-sub-link {
   font-size: 16px;
   font-weight: 600;
-  color: #a0aec0;
+  color: var(--text-gray);
   padding-left: 15px;
   border-left: 2px solid rgba(255,255,255,0.05);
 }
@@ -2304,7 +2304,7 @@ section {
 }
 
 .mobile-cta-visible {
-  display: flex;
+  display: flex !important;
 }
 
 
