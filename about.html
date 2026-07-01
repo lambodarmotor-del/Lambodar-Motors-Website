@@ -26,7 +26,7 @@
     content="Premium car denting, painting & repair services in Gota.
     WhatsApp for free quote today." />
   <meta property="og:type" content="business.business" />
-  <meta property="og:image" content="assets/images/logo/og-image.svg" />
+  <meta property="og:image" content="assets/images/logo/og-image.png" />
   <meta name="theme-color" content="#e53e3e" />
   <link rel="canonical" href="https://lambodar-motors.vercel.app/about.html" />
   <link rel="icon" type="image/svg+xml"
@@ -38,46 +38,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "Lambodar Motors",
-    "url": "https://lambodar-motors.vercel.app",
-    "telephone": "+918141282494",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Shop No. 12, Shree Swam Complex, near Gokul Hotel, beside Gota Cross Road, Vasant Nagar",
-      "addressLocality": "Ahmedabad",
-      "addressRegion": "Gujarat",
-      "postalCode": "382481",
-      "addressCountry": "IN"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 23.1136,
-      "longitude": 72.5679
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "08:30",
-        "closes": "22:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday"],
-        "opens": "09:00",
-        "closes": "22:30"
-      }
-    ],
-    "priceRange": "₹₹",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "29"
-    }
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lambodar-motors.vercel.app/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About",
+      "item": "https://lambodar-motors.vercel.app/about.html"
+    }]
   }
   </script>
   <script type="application/ld+json">
@@ -332,6 +307,12 @@
     <!-- ABOUT DETAILS -->
   <section style="padding-top: 130px; padding-bottom: 30px; background: linear-gradient(rgba(11, 11, 13, 0.90), rgba(11, 11, 13, 0.97)), url('assets/images/hero_bg.png') no-repeat center center; background-size: cover;">
     <div class="section-container" style="max-width: 1150px; margin: 0 auto; padding: 0 20px;">
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Home</a></li>
+      <li>About</li>
+    </ol>
+  </nav>
       <div class="section-header" style="text-align: center; margin-bottom: 10px;">
         <span class="badge">Our Story</span>
         <h1 style="font-size: 44px; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px;">About Lambodar Motors in Gota, Ahmedabad</h1>
@@ -552,6 +533,7 @@
   });
   </script>
 
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>
 

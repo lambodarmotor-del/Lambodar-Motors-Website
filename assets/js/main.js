@@ -490,6 +490,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
+  // Active nav link detection
+  const currentPath = window.location.pathname;
+  const currentFile = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+  const desktopNavLinks = document.querySelectorAll('.nav-menu a');
+  desktopNavLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href === currentFile || href === currentPath)) {
+      link.classList.add('nav-active');
+    }
+  });
+
+  // Back to top button logic
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   updateLiveReviewCount();
 });
 

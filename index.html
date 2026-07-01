@@ -16,7 +16,7 @@
     content="Premium car denting, painting & repair services in Gota.
     WhatsApp for free quote today." />
   <meta property="og:type" content="business.business" />
-  <meta property="og:image" content="assets/images/logo/og-image.svg" />
+  <meta property="og:image" content="assets/images/logo/og-image.png" />
   <meta name="theme-color" content="#e53e3e" />
   <link rel="canonical" href="https://lambodar-motors.vercel.app/" />
   <link rel="icon" type="image/svg+xml"
@@ -288,12 +288,24 @@
         </a>
       </div>
       <nav class="nav-menu" aria-label="Main navigation">
-        <a href="#services">Services</a>
+        <div class="dropdown">
+          <a href="#services" class="dropdown-toggle">Services</a>
+          <div class="dropdown-menu">
+            <a href="ac-service.html">AC Service</a>
+            <a href="battery-brakes-oil.html">Battery, Brakes &amp; Oil</a>
+            <a href="car-detailing.html">Car Detailing</a>
+            <a href="denting-painting.html">Denting &amp; Painting</a>
+            <a href="engine-service.html">Engine &amp; Mechanical</a>
+            <a href="insurance-claim.html">Insurance Claim</a>
+          </div>
+        </div>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
         <a href="#contact">Contact</a>
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog/index.html">Blog</a>
       </nav>
       <div class="header-ctas">
         <a href="tel:+918141282494" class="btn btn-outline btn-sm">
@@ -334,8 +346,8 @@
         <div class="hero-location">
           📍 Gota, Ahmedabad
         </div>
-        <h1><span class="logo-red">Lambodar</span> Motors <span style="font-size: 0.6em; display: block; margin-top: 10px; font-weight: 600; color: #a0aec0;">Car Workshop in Gota, Ahmedabad</span></h1>
-        <p style="font-size: 17px; color: #a0aec0; margin-top: 15px; margin-bottom: 24px; font-weight: 500; font-family: var(--font-family); line-height: 1.6; max-width: 650px;">
+        <h1><span class="logo-red">Lambodar</span> Motors <span class="hero-h1-subtitle">Car Workshop in Gota, Ahmedabad</span></h1>
+        <p class="hero-description">
           Fast, transparent, and expert car care near SG Highway. Skip the aggregator markups and get exact estimates before any work begins.
         </p>
         <div class="hero-ctas">
@@ -343,7 +355,7 @@
             <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             Call Now
           </a>
-          <a href="https://wa.me/918141282494" target="_blank" class="btn btn-outline">
+          <a href="https://wa.me/918141282494" target="_blank" class="btn btn-whatsapp">
             <svg class="btn-icon" viewBox="0 0 16 16" width="18" height="18" fill="currentColor" style="margin-right: 8px; vertical-align: middle;"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
             WhatsApp Now
           </a>
@@ -357,23 +369,23 @@
   </section>
 
   <!-- TRUST STATS BAR -->
-  <div style="background:#0f0f12; border-bottom: 1px solid rgba(255, 255, 255, 0.03);">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; padding: 10px 24px;">
-      <div style="text-align:center; flex: 1; min-width: 180px;">
-        <div style="font-size:28px; font-weight:700; color:#FF4D4D; margin-bottom: 2px;">25+</div>
-        <div style="font-size:13px; color:#a0aec0;">Years Experience</div>
+  <div class="trust-stats-bar">
+    <div class="trust-stats-container">
+      <div class="trust-stat-item">
+        <div class="trust-stat-number">25+</div>
+        <div class="trust-stat-label">Years Experience</div>
       </div>
-      <div style="text-align:center; flex: 1; min-width: 180px;">
-        <div style="font-size:28px; font-weight:700; color:#FF4D4D; margin-bottom: 2px;">10,000+</div>
-        <div style="font-size:13px; color:#a0aec0;">Cars Serviced</div>
+      <div class="trust-stat-item">
+        <div class="trust-stat-number">10,000+</div>
+        <div class="trust-stat-label">Cars Serviced</div>
       </div>
-      <div style="text-align:center; flex: 1; min-width: 180px;">
-        <div style="font-size:28px; font-weight:700; color:#FF4D4D; margin-bottom: 2px;"><span id="live-review-count">29</span>+</div>
-        <div style="font-size:13px; color:#a0aec0;">5-Star Reviews</div>
+      <div class="trust-stat-item">
+        <div class="trust-stat-number"><span id="live-review-count">29</span>+</div>
+        <div class="trust-stat-label">5-Star Reviews</div>
       </div>
-      <div style="text-align:center; flex: 1; min-width: 180px;">
-        <div style="font-size:28px; font-weight:700; color:#FF4D4D; margin-bottom: 2px;">100%</div>
-        <div style="font-size:13px; color:#a0aec0;">Genuine Parts</div>
+      <div class="trust-stat-item">
+        <div class="trust-stat-number">100%</div>
+        <div class="trust-stat-label">Genuine Parts</div>
       </div>
     </div>
   </div>
@@ -707,12 +719,12 @@
         </div>
 
         <!-- Google Maps Embed Column -->
-        <div style="width: 100%; height: 100%; min-height: 380px;">
+        <div class="map-container-custom">
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.023035314627!2d72.52432357561337!3d23.09625257912217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e838fe2af9073%3A0xe09294d763469aa4!2sLambodar%20Motors!5e0!3m2!1sen!2sin!4v1780748276507!5m2!1sen!2sin"
             width="100%"
             height="100%"
-            style="border:0; border-radius:12px; filter: brightness(0.8); min-height: 380px;"
+            class="map-iframe-custom"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -722,8 +734,8 @@
       </div>
 
       <!-- FAQS -->
-      <div class="faq-container" style="max-width: 800px; margin: 60px auto 0 auto; display: flex; flex-direction: column; gap: 20px;">
-        <h3 style="text-align: center; margin-bottom: 15px; font-size: 28px; font-weight: 800;">Frequently Asked Questions</h3>
+      <div class="faq-container faq-container-custom">
+        <h3 class="faq-heading-custom">Frequently Asked Questions</h3>
         
         <div class="faq-static-item">
           <h4><span>Q:</span> How much does car denting and painting cost in Ahmedabad?</h4>
@@ -750,8 +762,8 @@
           <p>Lambodar Motors is located at Shop No. 12, Shree Swam Complex, near Gokul Hotel, beside Gota Cross Road, Vasant Nagar, Gota, Ahmedabad, Gujarat 382481. The easiest landmark is Gokul Hotel — the workshop is directly beside it.</p>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 35px;">
-        <a href="faq.html" class="btn btn-outline" style="border: 2px solid var(--accent-red); color: var(--text-white); padding: 12px 28px; border-radius: 8px; font-weight: 700; font-family: var(--font-family); font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: var(--transition);">
+      <div class="faq-more-btn-wrapper">
+        <a href="faq.html" class="btn btn-outline faq-more-btn">
           View All FAQs →
         </a>
       </div>
@@ -759,8 +771,7 @@
   </section>
 
   <!-- Free Estimate CTA section (just above footer) -->
-  <section style="text-align:center; padding:60px 20px;
-    background:#16161a;">
+  <section class="cta-section-custom">
     <h2 style="font-size:28px; color:#fff; margin-bottom:12px;">
       🚗 Bring Your Car In
     </h2>
@@ -770,8 +781,7 @@
     </p>
     <a href="https://wa.me/918141282494?text=Hi+Lambodar+Motors!+I+want+an+estimate+for+my+car."
       target="_blank"
-      class="btn btn-whatsapp"
-      style="color: #132920; padding:16px 36px; font-size:16px;">
+      class="btn btn-whatsapp">
       WhatsApp for Estimate →
     </a>
   </section>
@@ -791,7 +801,7 @@
           <span><span class="logo-red">Lambodar</span> Motors</span>
         </a>
       </div>
-        <p class="footer-tagline" style="font-size: 13px; color: #a0aec0; margin-top: 10px; margin-bottom: 15px; font-family: var(--font-family); line-height: 1.4;">Lambodar Motors — Multi-Brand Car Service, Gota, Ahmedabad</p>
+        <p class="footer-tagline">Lambodar Motors — Multi-Brand Car Service, Gota, Ahmedabad</p>
         <!-- SOCIAL MEDIA FOOTER LINKS -->
         <div class="social-links">
           <p>Follow Us</p>
@@ -882,6 +892,7 @@
     }
   });
   </script>
+  <button class="back-to-top" aria-label="Back to top">↑</button>
 </body>
 </html>
 
