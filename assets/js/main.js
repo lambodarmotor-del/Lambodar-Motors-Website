@@ -1,4 +1,15 @@
-// Force scroll restoration to top of page on reload
+// Force redirect to homepage on refresh/reload from any page
+try {
+  const navEntries = performance.getEntriesByType('navigation');
+  const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+  if (isReload) {
+    const isBlog = window.location.pathname.includes('/blog/');
+    window.location.replace(isBlog ? '../index.html' : 'index.html');
+  }
+} catch (e) {
+  console.error("Navigation timing error:", e);
+}
+
 if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 }
