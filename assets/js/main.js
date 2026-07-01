@@ -3,6 +3,10 @@ if (history.scrollRestoration) {
   history.scrollRestoration = "manual";
 }
 window.scrollTo(0, 0);
+if (window.location.hash) {
+  history.replaceState("", document.title, window.location.pathname);
+  window.scrollTo(0, 0);
+}
 
 /* ==========================================================================
    Lambodar Motors - Main JavaScript Interactivity
