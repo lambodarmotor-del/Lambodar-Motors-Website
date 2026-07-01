@@ -110,9 +110,14 @@ function renderReviewsGrid() {
         <div class="review-stars" style="color: #FFD700; margin-bottom: 8px;">${starString}</div>
         <p class="review-text">"${review.text}"</p>
       </div>
-      <div class="review-author" style="margin-top: 15px; font-weight: 700; font-size: 15px; color: var(--text-white);">
-        ${review.name}
-        <span class="review-badge" style="display: block; font-size: 11px; color: var(--text-gray); font-weight: 500; margin-top: 2px;">${review.badge}</span>
+      <div class="review-author" style="margin-top: 20px; display: flex; align-items: center; gap: 12px; text-align: left; width: 100%;">
+        <div class="review-avatar" style="width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); color: var(--text-gray); flex-shrink: 0;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span style="font-weight: 700; font-size: 15px; color: var(--text-white);">${review.name}</span>
+          <span class="review-badge" style="display: inline-block; font-size: 11px; color: #4ade80; background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 4px; padding: 2px 8px; font-weight: 600;">${review.badge}</span>
+        </div>
       </div>
     `;
     container.appendChild(card);
