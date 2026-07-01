@@ -112,6 +112,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // Also trigger on window load to ensure accurate measurements after images load
     window.addEventListener('load', updateImageWidth);
 
+    // Scroll-triggered entrance animation
+    if ('IntersectionObserver' in window) {
+      const sliderObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            beforeImg.style.width = '70%';
+            handle.style.left = '70%';
+            
+            setTimeout(() => {
+              beforeImg.classList.remove('slider-entrance-active');
+              handle.classList.remove('slider-entrance-active');
+            }, 800);
+            
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+      sliderObserver.observe(sliderWrapper);
+    } else {
+      beforeImg.style.width = '70%';
+      handle.style.left = '70%';
+      beforeImg.classList.remove('slider-entrance-active');
+      handle.classList.remove('slider-entrance-active');
+    }
+
+    const removeEntranceClasses = () => {
+      beforeImg.classList.remove('slider-entrance-active');
+      handle.classList.remove('slider-entrance-active');
+    };
+
     const moveSlider = (clientX) => {
       const rect = sliderWrapper.getBoundingClientRect();
       const position = clientX - rect.left;
@@ -128,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mouse Events
     sliderWrapper.addEventListener('mousedown', (e) => {
       isDragging = true;
+      removeEntranceClasses();
       moveSlider(e.clientX);
     });
 
@@ -143,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Touch Events (Mobile friendly)
     sliderWrapper.addEventListener('touchstart', (e) => {
       isDragging = true;
+      removeEntranceClasses();
       moveSlider(e.touches[0].clientX);
     }, { passive: true });
 
@@ -158,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Keyboard support for Before/After Slider
     const handleButton = handle.querySelector('.slider-handle-button') || handle;
     handleButton.addEventListener('keydown', (e) => {
+      removeEntranceClasses();
       let percentage = parseFloat(handle.style.left);
       if (isNaN(percentage)) {
         percentage = 70; // default in HTML
