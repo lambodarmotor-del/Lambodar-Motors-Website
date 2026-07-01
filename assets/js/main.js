@@ -154,6 +154,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchend', () => {
       isDragging = false;
     });
+
+    // Keyboard support for Before/After Slider
+    const handleButton = handle.querySelector('.slider-handle-button') || handle;
+    handleButton.addEventListener('keydown', (e) => {
+      let percentage = parseFloat(handle.style.left);
+      if (isNaN(percentage)) {
+        percentage = 70; // default in HTML
+      }
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        percentage = Math.max(0, percentage - 5);
+        beforeImg.style.width = `${percentage}%`;
+        handle.style.left = `${percentage}%`;
+        handleButton.setAttribute('aria-valuenow', Math.round(percentage));
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        percentage = Math.min(100, percentage + 5);
+        beforeImg.style.width = `${percentage}%`;
+        handle.style.left = `${percentage}%`;
+        handleButton.setAttribute('aria-valuenow', Math.round(percentage));
+      }
+    });
   }
 
   // 3. LIGHTBOX MODAL FOR GALLERY (OPTION 2: LOGO-STYLE GRID POPUP & ZOOM)
@@ -171,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastActiveElement = null;
 
     galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
+      const openLightbox = () => {
         lastActiveElement = document.activeElement;
         const title = item.getAttribute('data-gallery-title') || 'Workshop Gallery';
         const imagesStr = item.getAttribute('data-gallery-images') || '';
@@ -248,6 +271,15 @@ document.addEventListener('DOMContentLoaded', () => {
             contentEl.style.transform = 'scale(1)';
             contentEl.style.opacity = '1';
           }, 10);
+        }
+      };
+
+      item.addEventListener('click', openLightbox);
+
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox();
         }
       });
     });

@@ -273,6 +273,7 @@
   </script>
 </head>
 <body class="dark-theme">
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
   <!-- HEADER / NAVIGATION -->
   <header class="main-header">
@@ -286,7 +287,7 @@
           <span><span class="logo-red">Lambodar</span> Motors</span>
         </a>
       </div>
-      <nav class="nav-menu">
+      <nav class="nav-menu" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
@@ -314,12 +315,17 @@
 
   <!-- MOBILE NAV OVERLAY -->
   <div class="mobile-nav-overlay">
-    <nav class="mobile-nav-links">
+    <nav class="mobile-nav-links" aria-label="Mobile navigation">
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
       <a href="about.html">About</a>
       <a href="faq.html">FAQ</a>
     </nav>
   </div>
+
+  <main id="main-content">
 
   <!-- HERO SECTION -->
   <section id="home" class="hero-section">
@@ -522,7 +528,7 @@
 
           <!-- Slider Handle -->
           <div class="slider-handle" style="left: 70%;">
-            <div class="slider-handle-button">↔</div>
+            <div class="slider-handle-button" tabindex="0" role="slider" aria-label="Before and after slider" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">↔</div>
           </div>
         </div>
       </div>
@@ -540,7 +546,7 @@
 
       <div class="gallery-grid">
         <!-- Gallery Item 1 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Car Denting &amp; Panel Repair"
              data-gallery-images="assets/images/gallery/cover-denting.webp,assets/images/gallery/denting-2.webp,assets/images/gallery/denting-3.webp"
              data-gallery-captions="Side-Panel Dent Pulling Process,Panel Beating &amp; Shaping,Primed Fender Ready for Paint Spray">
@@ -551,7 +557,7 @@
         </div>
 
         <!-- Gallery Item 2 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Color Matching &amp; Paint Booth"
              data-gallery-images="assets/images/gallery/cover-painting.webp,assets/images/gallery/painting-2.webp,assets/images/denting_painting_bg.jpg"
              data-gallery-captions="Premium Paint Spraying Booth,Detailed Window &amp; Trim Masking,Factory Gloss clear coat Application">
@@ -562,7 +568,7 @@
         </div>
 
         <!-- Gallery Item 3 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Deep Car Interior Spa"
              data-gallery-images="assets/images/gallery/cover-spa.webp,assets/images/car_detailing_bg.jpg,assets/images/hero_bg.png"
              data-gallery-captions="Leather Dashboard &amp; Console Brushing,Exterior Active Foam Wash,Ultra-Gloss Showroom Polish Finish">
@@ -573,7 +579,7 @@
         </div>
 
         <!-- Gallery Item 4 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Engine Fault Diagnostics"
              data-gallery-images="assets/images/gallery/cover-engine.webp,assets/images/engine_service_bg.png,assets/images/battery_brakes_oil_bg.jpg"
              data-gallery-captions="OBD2 Fault Diagnostics System,Under-Hood Mechanical Inspection,Engine Battery &amp; Fluids Service">
@@ -584,7 +590,7 @@
         </div>
 
         <!-- Gallery Item 5 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Tyre Alignment Calibration"
              data-gallery-images="assets/images/gallery/cover-alignment.webp,assets/images/battery_brakes_oil_bg.jpg,assets/images/gallery/cover-alignment.webp"
              data-gallery-captions="3D Laser Targets Calibration,Brake Caliper Servicing,Camber &amp; Toe Angle Alignment Check">
@@ -595,7 +601,7 @@
         </div>
 
         <!-- Gallery Item 6 -->
-        <div class="gallery-item"
+        <div class="gallery-item" tabindex="0" role="button"
              data-gallery-title="Premium Ceramic Polish Coating"
              data-gallery-images="assets/images/gallery/cover-ceramic.webp,assets/images/car_detailing_bg.jpg,assets/images/gallery/after-panel.webp"
              data-gallery-captions="Applying Liquid Ceramic Shield Coating,Dual-Action Buffer Wax Polish,Mirror-Like Deep Gloss Paint Finish">
@@ -770,6 +776,8 @@
     </a>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="main-footer">
     <div class="footer-container">
@@ -862,15 +870,15 @@
     </a>
   </div>
 
-  <script src="assets/js/reviews.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/reviews.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
   <script>
   window.addEventListener('scroll', function() {
     var bar = document.getElementById('mobileCTA');
     if (window.innerWidth < 768 && window.scrollY > 200) {
-      bar.style.display = 'flex';
+      bar.classList.add('mobile-cta-visible');
     } else {
-      bar.style.display = 'none';
+      bar.classList.remove('mobile-cta-visible');
     }
   });
   </script>

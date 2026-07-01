@@ -11,7 +11,7 @@
   --accent-red-glow: rgba(185, 28, 28, 0.25);
   --text-white: #ffffff;
   --text-silver: #f7fafc;
-  --text-gray: #a0aec0;
+  --text-gray: #bbc8d4;
   --text-muted: #718096;
   --font-family: 'Outfit', sans-serif;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -866,8 +866,12 @@ section {
   font-family: 'Outfit', sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
-  outline: none;
   margin-bottom: 24px;
+}
+
+.gallery-lightbox-back-btn:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 3px;
 }
 
 .gallery-lightbox-back-btn:hover {
@@ -999,8 +1003,12 @@ section {
   font-family: 'Outfit', sans-serif;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
-  outline: none;
   white-space: nowrap;
+}
+
+.zoom-lightbox-back-btn:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 3px;
 }
 
 .zoom-lightbox-back-btn:hover {
@@ -1159,9 +1167,15 @@ section {
 #contactForm input:focus,
 #contactForm select:focus,
 #contactForm textarea:focus {
-  outline: none;
   border-color: var(--accent-red);
   box-shadow: 0 0 8px var(--accent-red-glow);
+}
+
+#contactForm input:focus-visible,
+#contactForm select:focus-visible,
+#contactForm textarea:focus-visible {
+  outline: 2px solid var(--accent-red);
+  outline-offset: 3px;
 }
 
 #contactForm button {
@@ -2260,6 +2274,37 @@ section {
 .clickable-phone-number:hover {
   color: var(--accent-red-hover) !important;
   transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent-red);
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-family: var(--font-family);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+.mobile-cta-visible {
+  display: flex;
 }
 
 
