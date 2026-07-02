@@ -93,13 +93,36 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Close menu when clicking link
+    // Close menu and handle navigation when clicking a link
     mobileOverlay.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
+        // Close menu elements first
         mobileBtn.classList.remove('active');
         mobileOverlay.classList.remove('active');
         document.body.classList.remove('no-scroll');
         mobileBtn.setAttribute('aria-expanded', 'false');
+
+        // Check if the link points to a section on the current page
+        if (href) {
+          const hashIndex = href.indexOf('#');
+          if (hashIndex !== -1) {
+            const hash = href.substring(hashIndex);
+            const targetId = hash.substring(1);
+            
+            // Check if we are on the page that contains this target element
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+              e.preventDefault();
+              
+              // Scroll to the target element after a short timeout to let overflow:hidden be removed
+              setTimeout(() => {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }, 150);
+            }
+          }
+        }
       });
     });
   }
