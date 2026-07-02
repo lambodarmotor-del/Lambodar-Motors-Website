@@ -1,8 +1,13 @@
 {
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
         {
           "key": "X-Frame-Options",
           "value": "DENY"
@@ -40,6 +45,19 @@
           "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
         }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lambodar-motors.vercel.app"
+        }
+      ],
+      "destination": "https://lambodarmotors.vercel.app/:path*",
+      "permanent": true
     }
   ]
 }
