@@ -1,0 +1,4 @@
+# Exclude administrative files from production deployment
+admin.html
+assets/js/admin.js
+.backup_rollback/

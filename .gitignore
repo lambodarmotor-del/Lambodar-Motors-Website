@@ -1,0 +1,12 @@
+# User-defined ignores for Lambodar Motors website
+admin.html
+assets/js/admin.js
+.backup_rollback/
+*.bak
+*.backup
+.env
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/

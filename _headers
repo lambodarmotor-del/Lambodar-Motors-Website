@@ -1,9 +1,35 @@
+# Lambodar Motors Production Deployment Headers Configuration
+
 /*
+  # Mitigate clickjacking attacks by blocking the site from being loaded inside an iframe on other domains
   X-Frame-Options: DENY
+
+  # Prevent browsers from parsing files as a different MIME type than declared in the Content-Type header
   X-Content-Type-Options: nosniff
+
+  # Protect user privacy by stripping the referrer path when navigating from HTTPS to HTTP or to external origins
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com https://www.googletagmanager.com;
+
+  # Restrict browser APIs like camera, microphone, geolocation, and USB to protect visitor device privacy
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()
+
+  # Enforce encrypted HTTPS connections for one year, covering all subdomains and opt-in for HSTS preload list
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Isolate the browsing context from other windows to protect against cross-origin data leaks
+  Cross-Origin-Opener-Policy: same-origin
+
+  # Prevent loading cross-origin resources that do not explicitly opt-in via CORS (used for security isolation)
+  Cross-Origin-Embedder-Policy: same-origin
+
+  # Limit cross-origin requests for style, script, and image resources to own site or same origin
+  Cross-Origin-Resource-Policy: same-site
+
+  # Control allowed source domains for scripts, styles, fonts, images, and embedded frames to block XSS attacks
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests;
+
+  # Prevent disclosure of backend server technologies
+  X-Powered-By: ""
 
 # Cloudflare 404 Routing Rule
 404 /404.html 404
